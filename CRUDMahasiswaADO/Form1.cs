@@ -18,6 +18,27 @@ namespace CRUDMahasiswaADO
             conn = new SqlConnection(connectionString);
         }
 
+        // Langkah 5 – Method Koneksi Database (Event tombol Connect)
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                    MessageBox.Show("Koneksi berhasil dibuka");
+                }
+                else
+                {
+                    MessageBox.Show("Koneksi sudah terbuka");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka koneksi: " + ex.Message);
+            }
+        }
+
         
     }
 }
