@@ -75,6 +75,37 @@ namespace CRUDMahasiswaADO
                     conn.Open();
                 }
 
+                // Validasi
+                if (label1.Text == "")
+                {
+                    MessageBox.Show("NIM harus diisi");
+                    label1.Focus();
+                    return;
+                }
+                if (label2.Text == "")
+                {
+                    MessageBox.Show("Nama harus diisi");
+                    label2.Focus();
+                    return;
+                }
+                if (cmbJK.Text == "")
+                {
+                    MessageBox.Show("Jenis Kelamin harus dipilih");
+                    cmbJK.Focus();
+                    return;
+                }
+                if (label6.Text == "")
+                {
+                    MessageBox.Show("Kode Prodi harus diisi");
+                    label6.Focus();
+                    return;
+                }
+
+                string query = @"INSERT INTO Mahasiswa 
+                    (NIM, Nama, JenisKelamin, TanggalLahir, Alamat, KodeProdi, TanggalDaftar) 
+                    VALUES 
+                    (@NIM, @Nama, @JK, @TanggalLahir, @Alamat, @KodeProdi, @TanggalDaftar)";
+
                 
     }
 }
