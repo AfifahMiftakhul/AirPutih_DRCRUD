@@ -1,45 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace CRUDMahasiswaADO
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        // Langkah 4 – Variabel Koneksi
+        private SqlConnection conn;
+        private string connectionString = "Data Source=localhost;Initial Catalog=DESKTOP-4G4UMV8\\AFIFAH;Integrated Security=True";
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
