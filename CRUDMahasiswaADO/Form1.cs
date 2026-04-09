@@ -39,6 +39,26 @@ namespace CRUDMahasiswaADO
             }
         }
 
-        
+        // Langkah 6 – Menampilkan Data dengan SqlDataReader (event btnLoad_Click)
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                string query = "SELECT NIM, Nama, JenisKelamin, TanggalLahir, Alamat, KodeProdi FROM Mahasiswa";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                dataGridView1.DataSource = dt;
+
+                reader.Close();
+            }
+            
     }
 }
