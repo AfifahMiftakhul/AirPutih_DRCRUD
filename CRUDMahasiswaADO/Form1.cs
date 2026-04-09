@@ -220,4 +220,32 @@ namespace CRUDMahasiswaADO
             }
         }
 
-        
+        // Langkah 10 – Menampilkan Data ke Form Saat Baris Dipilih (event CellClick DataGridView)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                label1.Text = row.Cells["NIM"].Value.ToString();
+                label2.Text = row.Cells["Nama"].Value.ToString();
+                cmbJK.Text = row.Cells["JenisKelamin"].Value.ToString();
+                dtpTanggalLahir.Value = Convert.ToDateTime(row.Cells["TanggalLahir"].Value);
+                label4.Text = row.Cells["Alamat"].Value.ToString();
+                label6.Text = row.Cells["KodeProdi"].Value.ToString();
+            }
+        }
+
+        // Langkah 11 – Method Clear Form
+        private void ClearForm()
+        {
+            label1.Text = "";
+            label2.Text = "";
+            cmbJK.SelectedIndex = -1;
+            dtpTanggalLahir.Value = DateTime.Now;
+            label4.Text = "";
+            label6.Text = "";
+            label1.Focus();
+        }
+    }
+}
+
