@@ -59,6 +59,12 @@ namespace CRUDMahasiswaADO
 
                 reader.Close();
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
+            }
+        }
+
+        
     }
 }
