@@ -11,6 +11,13 @@ namespace CRUDMahasiswaADO
         private SqlConnection conn;
         private string connectionString = "Data Source=localhost;Initial Catalog=DESKTOP-4G4UMV8\\AFIFAH;Integrated Security=True";
 
+        // Langkah 5 – Constructor
+        public Form1()
+        {
+            InitializeComponent();
+            conn = new SqlConnection(connectionString);
+        }
+
         
     }
 }
