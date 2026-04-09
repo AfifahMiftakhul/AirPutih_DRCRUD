@@ -65,6 +65,16 @@ namespace CRUDMahasiswaADO
             }
         }
 
-        
+        // Langkah 7 – Menambahkan Data (event btnInsert_Click)
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                
     }
 }
